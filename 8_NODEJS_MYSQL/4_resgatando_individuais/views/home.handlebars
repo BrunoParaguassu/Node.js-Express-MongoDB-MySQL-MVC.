@@ -1,0 +1,18 @@
+<h1>Cadastre seu livro:</h1>
+<form action='/books/insertbooks' method='post' class='form'>
+    <div class='form-control'>
+        <label for='title'>Título:</label>
+        <input type='text' name='title' placeholder='Digite o Título' />
+    </div>
+    <div class='form-control'>
+        <label for='page'>Páginas:</label>
+        <input
+            type='number'
+            name='page'
+            placeholder='Quantas páginas o livre tem?'
+        />
+    </div>
+    <div class='form-control'>
+        <input type='submit' value='Cadastrar' />
+    </div>
+</form>
