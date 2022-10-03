@@ -1,0 +1,8 @@
+<h1>Olá Handlebars</h1>
+<p>O nome do usuário é {{user.name}} {{user.surname}} e tem {{user.age}} anos de idade</p>
+<p>O nome da usuária é {{user2.name}} {{user.surname}} e tem {{user.age}} anos de idade</p>
+{{#if auth}}
+<p>
+    Você está autenticado <a href="/dashboard">clique aqui</a> para ir a area de membros!
+</p>
+{{/if}}
