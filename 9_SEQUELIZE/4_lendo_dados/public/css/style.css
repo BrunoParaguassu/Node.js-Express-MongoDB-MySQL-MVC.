@@ -1,0 +1,105 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+
+#navbar {
+  border-bottom: 1px solid #ccc;
+  padding: .5em;
+  margin-bottom: 1em;
+}
+
+#navbar ul{
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+#navbar ul li{
+  margin-left: 1em;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.form,
+.books-conteiner {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.form-control label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.form-checkbox {
+  flex-direction: row;
+}
+
+.form-checkbox {
+  margin-right: 10px;
+}
+
+.form-control input {
+  padding: 5px;
+}
+
+/* Books */
+
+.books-conteiner div {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#book-page {
+  padding: 2em;
+}
+
+#book-page .conteiner{
+  text-align: center;
+}
+
+.actions {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.actions a {
+  margin-right: 1em;
+} 
+
+/* users */
+
+.conteiner{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.conteiner .item{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  flex: 1 1 29%;
+  max-width: 29%;
+  height: 75px;
+}
