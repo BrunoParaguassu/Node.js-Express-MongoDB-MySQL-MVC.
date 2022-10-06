@@ -48,11 +48,36 @@ app.get("/users/:id", async (req, res) => {
 });
 
 app.post('/users/delete/:id', async (req, res) => {
-    const id = req.params.id;
+  const id = req.params.id;
 
-    await User.destroy({where: {id: id}});
-    res.redirect('/');
+  await User.destroy({where: {id: id}});
+  res.redirect('/');
 })
+
+app.get('/users/edit/:id', async (req, res) => {
+  const id = req.params.id;
+
+  const user = await User.findOne({raw: true, where: {id: id}});
+
+  res.render('useredit', { user });
+})
+
+app.post('/users/update/', async (req, res) => {
+  const id = req.body.id;
+  const name = req.body.name;
+  const occupation = req.body.occupation;
+  let newsletter = req.body.newsletter;
+
+  if (newsletter === "on") {
+    newsletter = true;
+  } else {
+    newsletter = false;
+  }
+
+  await User.update({name, occupation, newsletter}, {where: {id: id}});
+  res.redirect('/');
+})
+
 
 app.get("/", async (req, res) => {
   const users = await User.findAll({ raw: true });
@@ -62,7 +87,10 @@ app.get("/", async (req, res) => {
   res.render("home", { users: users });
 });
 
-conn.sync().then(() => {
+conn
+.sync()
+//.sync({force: true})
+.then(() => {
   app.listen(3000, () => {
     console.log("Servidor rodando!");
   });
