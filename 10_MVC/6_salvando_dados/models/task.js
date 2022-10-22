@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 const db = require('../db/conn');
 
-const task = db.define('task', {
+const Task = db.define('Task', {
     title: {
         type: DataTypes.STRING,
         required: true,
@@ -17,4 +17,4 @@ const task = db.define('task', {
     },
 }); 
 
-module.exports = task;
+module.exports = Task;

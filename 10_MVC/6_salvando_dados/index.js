@@ -5,7 +5,7 @@ const app = express();
 
 const conn = require("./db/conn");
 
-const task = require("./models/task");
+const Task = require("./models/task");
 
 const tasksRoutes = require("./routes/tasksRoutes");
 
@@ -24,7 +24,9 @@ app.use(express.static("public"));
 
 app.use('/tasks', tasksRoutes)
 
-conn.sync().then(() => {
+conn
+.sync()
+.then(() => {
   app.listen(3000)
   console.log("Conectado com sucesso!");
 }).catch((err) => console.log(err));
